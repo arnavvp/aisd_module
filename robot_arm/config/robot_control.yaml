@@ -1,0 +1,19 @@
+gazebo_ros2_control:
+  # Joint State Controller: Publishes joint states to the ROS topic.
+  joint_state_controller:
+    type: joint_state_controller/JointStateController
+    publish_rate: 50  # Hz, how frequently joint state is published.
+
+  # Joint Trajectory Controller: Allows moving the joints based on a trajectory.
+  joint_trajectory_controller:
+    type: effort_controllers/JointPositionController
+    joints:
+      - joint1
+      - joint2
+    gains:
+      joint1: {p: 100.0, d: 10.0}  # Proportional and Derivative gains for joint1.
+      joint2: {p: 100.0, d: 10.0}  # Proportional and Derivative gains for joint2.
+    type: effort_controllers/JointPositionController  # Type of controller (Position-based)
+    goal_time_tolerance: 0.5  # Maximum time difference to accept the goal position.
+
+# Optionally, you can configure additional controllers for other joints or features.

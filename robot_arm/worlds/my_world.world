@@ -1,0 +1,15 @@
+<?xml version="1.0" ?>
+<sdf version="1.6">
+  <world name="default">
+    <include>
+      <uri>model://ground_plane</uri>
+    </include>
+    <include>
+      <uri>model://sun</uri>
+    </include>
+
+    <!-- This plugin enables ROS-Gazebo integration for spawning models -->
+    <plugin name="gazebo_ros_factory" filename="libgazebo_ros_factory.so"/>
+  </world>
+</sdf>
+
